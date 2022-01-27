@@ -1,0 +1,60 @@
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+bind-address: "*"
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback:
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
+    - 1.1.1.1
+    - 8.8.8.8
+tun:
+  enable: true
+  stack: system 
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+  dns-hijack:
+    - tcp://8.8.8.8:53
+experimental:
+  interface-name: en0
+
+proxies:
+  - {name: vpn5.tjvpn.org, server: vpn5.tjvpn.org, port: 443, udp: true, type: trojan, password: 86779e80-7b2f-11ec-b537-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+  - {name: vpn5.tjvpn.org 78, server: vpn5.tjvpn.org, port: 443, udp: true, type: trojan, password: a54c6ec0-7b2f-11ec-b232-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+  - {name: vpn4.tjvpn.org, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: a2802390-7be8-11ec-b838-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+  - {name: vpn4.tjvpn.org 15, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: d947f2d0-7be8-11ec-b834-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+  
+proxy-groups:
+  - name: HACKDEEM
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - vpn5.tjvpn.org
+      - vpn5.tjvpn.org 78
+      - vpn4.tjvpn.org
+      - vpn4.tjvpn.org 15
+
+rules:
+ - MATCH,HACKDEEM
