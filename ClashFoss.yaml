@@ -155,7 +155,7 @@ proxies:
 - {name: vpn7.tjvpn.org, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: d8105c90-7dac-11ec-b235-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
 - {name: vpn7.tjvpn.org 19, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: ff6153b0-7dac-11ec-b733-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
 - {name: vpn7.tjvpn.org 21, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: 57616210-7dad-11ec-b732-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
-- {name: id-1.vless.co, server: id-1.vless.co, port: 443, type: vles, uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5, sni: p16-tiktokcdn-com.akamaized.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-path: /fastssh/fdefrtey/61f23648e306f/, ws-headers: {Host: p16-tiktokcdn-com.akamaized.net}}
+- {name: id-1.vless.co, server: id-1.vless.co, port: 443, type: ssr, uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5, sni: p16-tiktokcdn-com.akamaized.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-path: /fastssh/fdefrtey/61f23648e306f/, ws-headers: {Host: p16-tiktokcdn-com.akamaized.net}}
 
 proxy-groups:
   - name: HACKDEEM
