@@ -157,7 +157,7 @@ proxies:
 - {name: vpn7.tjvpn.org 21, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: 57616210-7dad-11ec-b732-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
 
 proxy-groups:
-  - name: HACKDEEM
+  - name: VMESS
     type: load-balance
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
@@ -169,6 +169,13 @@ proxy-groups:
     - vpn5.tjvpn.org
     - vpn5.tjvpn.org 76
     - vpn4.tjvpn.org 46
+    
+  - name: VLESS
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
     - vpn6.tjvpn.org
     - vpn6.tjvpn.org 73
     - vpn6.tjvpn.org 2
