@@ -14,10 +14,7 @@ Clash Share Public
 <br>
 </p>
 
-* [规则使用](#规则使用)
-  * [常用代理工具](#常用代理工具)
-  * [停止支持工具列表](#停止支持工具列表)
-  * [clash 衍生工具的选择](#clash%20衍生工具的选择)
-  * [规则集说明](#规则集说明)
-  * [懒人规则导入](https://github.com/Hackl0us/SS-Rule-Snippet/wiki/)
-  * [一键更新规则](#一键更新规则)
+* CLASH PREMIUM
+  * Vmess
+  * Trojan
+
