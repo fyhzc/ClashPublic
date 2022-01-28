@@ -1,11 +1,11 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img align="right" alt="Creative Commons License" style="border-width:0" src="" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img align="right" /></a>
 <h1 align="center">
 <sub>
 <img  src="https://i.loli.net/2020/11/27/SNhJxraRF3oeq2W.png"
       height=8%
       width=8%>
 </sub>
-Clash Share Publick
+Clash Share Public
 </h1>
 <p align="center">
 <sup>
