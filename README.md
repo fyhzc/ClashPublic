@@ -14,11 +14,11 @@ Clash Share Public
 <br>
 </p>
 
-# * CLASH PREMIUM
+* # FITURE CLASH PREMIUM
   * Vmess
   * Trojan
 
-# * CLASH FOSS
+* # FITURE CLASH FOSS
   * Vmess
   * Trojan
   * Vless
