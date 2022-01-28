@@ -1,4 +1,3 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img align="right" /></a>
 <h1 align="center">
 <sub>
 <img  src="https://i.loli.net/2020/11/27/SNhJxraRF3oeq2W.png"
