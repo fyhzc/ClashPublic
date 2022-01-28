@@ -1,0 +1,511 @@
+---
+port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7895
+mixed-port: 7893
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 127.0.0.1:7874
+  ipv6: false 
+  default-nameserver:
+  - 114.114.114.114
+  - 119.29.29.29
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  - 192.168.8.1
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - "*.lan"
+  - time.windows.com
+  - time.nist.gov
+  - time.apple.com
+  - time.asia.apple.com
+  - "*.ntp.org.cn"
+  - "*.openwrt.pool.ntp.org"
+  - time1.cloud.tencent.com
+  - time.ustc.edu.cn
+  - pool.ntp.org
+  - ntp.ubuntu.com
+  - ntp.aliyun.com
+  - ntp1.aliyun.com
+  - ntp2.aliyun.com
+  - ntp3.aliyun.com
+  - ntp4.aliyun.com
+  - ntp5.aliyun.com
+  - ntp6.aliyun.com
+  - ntp7.aliyun.com
+  - time1.aliyun.com
+  - time2.aliyun.com
+  - time3.aliyun.com
+  - time4.aliyun.com
+  - time5.aliyun.com
+  - time6.aliyun.com
+  - time7.aliyun.com
+  - "*.time.edu.cn"
+  - time1.apple.com
+  - time2.apple.com
+  - time3.apple.com
+  - time4.apple.com
+  - time5.apple.com
+  - time6.apple.com
+  - time7.apple.com
+  - time1.google.com
+  - time2.google.com
+  - time3.google.com
+  - time4.google.com
+  - music.163.com
+  - "*.music.163.com"
+  - "*.126.net"
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - "*.kuwo.cn"
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - "*.y.qq.com"
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - "*.xiami.com"
+  - "*.music.migu.cn"
+  - music.migu.cn
+  - "*.msftconnecttest.com"
+  - "*.msftncsi.com"
+  - localhost.ptlogin2.qq.com
+  - "+.srv.nintendo.net"
+  - "+.stun.playstation.net"
+  - xbox.*.microsoft.com
+  - "+.xboxlive.com"
+  - proxy.golang.org
+  - stun..
+  - stun...*
+  - heartbeat.belkin.com
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "+.battlenet.com.cn"
+  nameserver:
+    - 192.168.8.1
+    - dhcp://"eth1"
+  fallback:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
+    - tls://8.8.8.8:853
+    - tls://dns.rubyfish.cn:853
+    - https://1.1.1.1/dns-query
+  fallback-filter:
+    geoip: true
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+    domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
+profile:
+  store-selected: true
+  store-fake-ip: true
+experimental:
+  interface-name: eth0
+
+proxies:
+#Expired date 23-02-2022
+- {name: vpn4.tjvpn.org, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 30c4f060-7cb1-11ec-b136-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn4.tjvpn.org 76, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 51170be0-7cb1-11ec-b632-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn4.tjvpn.org 70, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 75892610-7cb1-11ec-b632-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn5.tjvpn.org, server: vpn5.tjvpn.org, port: 443, udp: true, type: trojan, password: 67b12a60-7cc3-11ec-b934-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn5.tjvpn.org 76, server: vpn5.tjvpn.org, port: 443, udp: true, type: trojan, password: 8bb97880-7cc3-11ec-b631-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+
+#Expired date 22-02-2022
+- {name: vpn4.tjvpn.org 46, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 66e24710-7be9-11ec-b732-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn6.tjvpn.org, server: vpn6.tjvpn.org, port: 443, udp: true, type: trojan, password: 7e957c20-7c09-11ec-b839-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn6.tjvpn.org 73, server: vpn6.tjvpn.org, port: 443, udp: true, type: trojan, password: 9e188bb0-7c09-11ec-b937-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn6.tjvpn.org 2, server: vpn6.tjvpn.org, port: 443, udp: true, type: trojan, password: d71442e0-7c09-11ec-b637-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn6.tjvpn.org 96, server: vpn6.tjvpn.org, port: 443, udp: true, type: trojan, password: 007cbc60-7c0a-11ec-b637-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn6.tjvpn.org 76, server: vpn6.tjvpn.org, port: 443, udp: true, type: trojan, password: 2aef56a0-7c0a-11ec-b735-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+  
+#Expired date 24-02-2022
+- {name: vpn7.tjvpn.org, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: d8105c90-7dac-11ec-b235-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn7.tjvpn.org 19, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: ff6153b0-7dac-11ec-b733-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+- {name: vpn7.tjvpn.org 21, server: vpn7.tjvpn.org, port: 443, udp: true, type: trojan, password: 57616210-7dad-11ec-b732-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
+
+proxy-groups:
+  - name: TROJAN
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+    - vpn4.tjvpn.org
+    - vpn4.tjvpn.org 76
+    - vpn4.tjvpn.org 70
+    - vpn5.tjvpn.org
+    - vpn5.tjvpn.org 76
+    - vpn4.tjvpn.org 46
+    - vpn6.tjvpn.org
+    - vpn6.tjvpn.org 73
+    - vpn6.tjvpn.org 2
+    - vpn6.tjvpn.org 96
+    - vpn6.tjvpn.org 76
+    - vpn7.tjvpn.org
+    - vpn7.tjvpn.org 19
+    - vpn7.tjvpn.org 21
+      
+rule-providers:
+  clashBlock_Adaway:
+    type: http
+    behavior: classical
+    path: "./ruleset/clashBlock_adaway.yaml"
+    url: https://raw.githubusercontent.com/zzzt27/clashBlock/main/adaway.yaml
+    interval: 86400
+
+  Browser:
+    type: http
+    behavior: classical
+    path: "./rule_provider/browser.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/browsermaster.yaml
+    interval: 86400
+  
+  Callofduty:
+    type: http
+    behavior: classical
+    path: "./rule_provider/callofduty.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/callofdutymaster.yaml
+    interval: 86400
+    
+  Deezer:
+    type: http
+    behavior: classical
+    path: "./rule_provider/deezer.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/deezermaster.yaml
+    interval: 86400
+  
+  Facebook:
+    type: http
+    behavior: classical
+    path: "./rule_provider/facebook.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/facebookmaster.yaml
+    interval: 86400
+    
+  Garena:
+    type: http
+    behavior: classical
+    path: "./rule_provider/garena.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/garenamaster.yaml
+    interval: 86400
+    
+  Iklan:
+    type: http
+    behavior: classical
+    path: "./rule_provider/iklan.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/iklanmaster.yaml
+    interval: 86400
+    
+  Instagram:
+    type: http
+    behavior: classical
+    path: "./rule_provider/instagram.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/instagrammaster.yaml
+    interval: 86400
+    
+  LAN:
+    type: http
+    behavior: classical
+    path: "./rule_provider/LAN.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/LAN.yaml
+    interval: 86400
+    
+  Langitmusik:
+    type: http
+    behavior: classical
+    path: "./rule_provider/langitmusik.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/langitmusikmaster.yaml
+    interval: 86400
+    
+  Mobilegends:
+    type: http
+    behavior: classical
+    path: "./rule_provider/ml.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/mlmaster.yaml
+    interval: 86400
+    
+  Onlineshop:
+    type: http
+    behavior: classical
+    path: "./rule_provider/onlineshop.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/onlineshopmaster.yaml
+    interval: 86400
+    
+  Pubg:
+    type: http
+    behavior: classical
+    path: "./rule_provider/pubg.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/pubgmaster.yaml
+    interval: 86400
+    
+  Resso:
+    type: http
+    behavior: classical
+    path: "./rule_provider/resso.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/ressomaster.yaml
+    interval: 86400
+    
+  Roblox:
+    type: http
+    behavior: classical
+    path: "./rule_provider/roblox.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/robloxmaster.yaml
+    interval: 86400
+    
+  Smule:
+    type: http
+    behavior: classical
+    path: "./rule_provider/smule.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/smulemaster.yaml
+    interval: 86400
+    
+  Soundcloud:
+    type: http
+    behavior: classical
+    path: "./rule_provider/soundcloud.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/soundcloudmaster.yaml
+    interval: 86400
+    
+  Starmaker:
+    type: http
+    behavior: classical
+    path: "./rule_provider/starmaker.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/starmakermaster.yaml
+    interval: 86400
+    
+  Speedtest:
+    type: http
+    behavior: classical
+    path: "./rule_provider/speedtest.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/speedtestmaster.yaml
+    interval: 86400
+    
+  Tiktok:
+    type: http
+    behavior: classical
+    path: "./rule_provider/tiktok.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/tiktokmaster.yaml
+    interval: 86400
+    
+  Wesing:
+    type: http
+    behavior: classical
+    path: "./rule_provider/wesing.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/wesingmaster.yaml
+    interval: 86400
+    
+  Whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule_provider/whatsapp.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/whatsappmaster.yaml
+    interval: 86400
+    
+  Youtube:
+    type: http
+    behavior: classical
+    path: "./rule_provider/youtube.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/youtubemaster.yaml
+    interval: 86400
+    
+  Zoom:
+    type: http
+    behavior: classical
+    path: "./rule_provider/zoom.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/zoommaster.yaml
+    interval: 86400
+    
+  apple-proxy:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/Apple-proxy.yaml"
+    path: ./ruleset/Apple-proxy.yaml
+    interval: 3600
+
+  apple-direct:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/Apple-direct.yaml"
+    path: ./ruleset/Apple-direct.yaml
+    interval: 3600
+
+  cn:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/CN.yaml"
+    path: ./ruleset/CN.yaml
+    interval: 3600
+
+  ad-keyword:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/common-ad-keyword.yaml"
+    path: ./ruleset/common-ad-keyword.yaml
+    interval: 3600
+
+  foreign:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/foreign.yaml"
+    path: ./ruleset/foreign.yaml
+    interval: 3600
+
+  telegram:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/App/social/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+    interval: 3600
+
+  lan:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Rulesets/Clash/Basic/LAN.yaml"
+    path: ./ruleset/LAN.yaml
+    interval: 3600
+
+script:
+  code: |
+    def main(ctx, metadata):
+        ruleset_action = {"Iklanmaster": "REJECT",
+                          "clashBlock_Adaway": "TROJAN",
+                          "Browser": "TROJAN",
+                          "Callofduty": "TROJAN",
+                          "Deezer": "DIRECT",
+                          "Facebook": "DIRECT",
+                          "Garena": "TROJAN",
+                          "Iklan": "REJECT",
+                          "Instagram": "DIRECT",
+                          "LAN": "DIRECT",
+                          "Langitmusik": "DIRECT",
+                          "Mobilegends": "TROJAN",
+                          "Onlineshop": "TROJAN",
+                          "Pubg": "TROJAN",
+                          "Resso": "DIRECT",
+                          "Roblox": "TROJAN",
+                          "Smule": "DIRECT",
+                          "Soundcloud": "DIRECT",
+                          "Starmaker": "DIRECT",
+                          "Speedtest": "TROJAN",
+                          "Tiktok": "DIRECT",
+                          "Wesing": "DIRECT",
+                          "Whatsapp": "DIRECT",
+                          "Youtube": "TROJAN",
+                          "Zoom": "TROJAN",
+                          "apple-proxy": "TROJAN",
+                          "apple-direct": "DIRECT",
+                          "cn": "TROJAN",
+                          "ad-keyword": "TROJAN",
+                          "foreign": "DIRECT",
+                          "telegram": "TROJAN",
+                          "lan": "DIRECT",
+                          }
+        port = int(metadata["dst_port"])
+        if metadata["network"] == "UDP":
+            if port == "443,3478,4244,5222,5223,5228,5288,5242,5349,17000,20030,20031,34784,45395,50318,59234":
+                ctx.log('[Script] matched QUIC traffic use trojan')
+                return "TROJAN"
+                
+        if metadata["dst_ip"] == "":
+            metadata["dst_ip"] = ctx.resolve_ip(metadata["host"])
+        port_list = [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5223, 5228, 5229, 5230, 5242, 8080, 8443, 8880, 8888, 8889, 17000, 20030, 20031, 20443, 49152, 50318, 50473, 50458, 50460, 50457, 50432, 50455, 50471, 50473, 50456, 59234]
+        
+        if port not in port_list:
+            ctx.log('[Script] not common port use trojan')
+            return "TROJAN"
+        
+        if metadata["dst_ip"] == "":
+            return "DIRECT"
+        
+        for ruleset in ruleset_action:
+            if ctx.rule_providers[ruleset].match(metadata):
+                return ruleset_action[ruleset]
+                
+        code = ctx.geoip(metadata["dst_ip"])
+        if code == "ID":
+            ctx.log('[Script] Geoip CN')
+            return "DIRECT"
+            
+        ctx.log('[Script] FINAL')
+        return "TROJAN"
+        
+rules:
+  - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+  - RULE-SET,clashBlock_Adaway,TROJAN
+  - RULE-SET,Browser,TROJAN
+  - RULE-SET,Callofduty,TROJAN
+  - RULE-SET,Deezer,DIRECT
+  - RULE-SET,Facebook,DIRECT
+  - RULE-SET,Garena,TROJAN
+  - RULE-SET,Iklan,REJECT
+  - RULE-SET,Instagram,DIRECT
+  - RULE-SET,LAN,DIRECT
+  - RULE-SET,Langitmusik,DIRECT
+  - RULE-SET,Mobilegends,TROJAN
+  - RULE-SET,Onlineshop,TROJAN
+  - RULE-SET,Pubg,TROJAN
+  - RULE-SET,Resso,DIRECT
+  - RULE-SET,Roblox,TROJAN
+  - RULE-SET,Smule,DIRECT
+  - RULE-SET,Soundcloud,DIRECT
+  - RULE-SET,Starmaker,DIRECT
+  - RULE-SET,Speedtest,TROJAN
+  - RULE-SET,Tiktok,DIRECT
+  - RULE-SET,Wesing,DIRECT
+  - RULE-SET,Whatsapp,DIRECT
+  - RULE-SET,Youtube,TROJAN
+  - RULE-SET,Zoom,TROJAN
+  - RULE-SET,apple-proxy,TROJAN
+  - RULE-SET,apple-direct,DIRECT
+  - RULE-SET,cn,TROJAN
+  - RULE-SET,ad-keyword,TROJAN
+  - RULE-SET,foreign,DIRECT
+  - RULE-SET,telegram,TROJAN
+  - RULE-SET,lan,DIRECT
+  - IP-CIDR,8.8.8.0/24,TROJAN
+  - IP-CIDR,1.1.1.0/24,TROJAN
+  - IP-CIDR,208.67.220.0/24,TROJAN
+  - GEOIP,CN,DIRECT
+  - MATCH,TROJAN
