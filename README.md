@@ -9,11 +9,17 @@ Clash Share Public
 <p align="center">
 <sup>
      Design for<i> Clash Premium (v2.5.3) / Clash Foss (v2.5.4) </i>.
-     <br> Maintained by <b>Hackdeem</b>.
+     <br> Maintained by <b>Hackdeem</b>
 </sup>
 <br>
 </p>
-
+<p align="center">
+<sup>
+     Design for<i> Clash Premium (v2.5.3) / Clash Foss (v2.5.4) </i>.
+     <br> Maintained by <b>Hackdeem</b>
+</sup>
+<br>
+</p>
 * # FITURE CLASH PREMIUM
   * Vmess
   * Trojan
