@@ -17,7 +17,7 @@ Clash Share Public
 <sup>
      <b>Package Active</b>
       <br> <i> Tiktok</i>
-     <i> Extra Unlimited</i>
+      <br> <i> Extra Unlimited</i>
           
 </sup>
 <br>
