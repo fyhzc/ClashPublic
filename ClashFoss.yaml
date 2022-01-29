@@ -113,7 +113,7 @@ dns:
   - "*.linksys.com"
   - "*.linksyssmartwifi.com"
   - "+.battlenet.com.cn"
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: 100.0.0.1/10
   nameserver:
     - 192.168.8.1
     - dhcp://"eth1"
