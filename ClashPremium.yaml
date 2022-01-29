@@ -189,12 +189,12 @@ proxy-groups:
     - vpn7.tjvpn.org 21
       
 rule-providers:
-  Ads_New:
+  Ads:
     type: http
     behavior: classical
-    path: "./ruleset/Ads_New.yaml"
+    path: "./ruleset/Ads.yaml"
     url: https://h2y.github.io/Shadowrocket-ADBlock-Rules/sr_top500_banlist_ad.conf
-    interval: 600
+    interval: 60
     
   clashBlock_Adaway:
     type: http
@@ -480,7 +480,7 @@ script:
         
 rules:
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-  - RULE-SET,Ads_New,REJECT
+  - RULE-SET,Ads,REJECT
   - RULE-SET,clashBlock_Adaway,REJECT
   - RULE-SET,Browser,TROJAN
   - RULE-SET,Callofduty,TROJAN
