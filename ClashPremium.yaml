@@ -480,8 +480,8 @@ script:
         
 rules:
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-  - RULE-SET,Ads_New,TROJAN
-  - RULE-SET,clashBlock_Adaway,TROJAN
+  - RULE-SET,Ads_New,REJECT
+  - RULE-SET,clashBlock_Adaway,REJECT
   - RULE-SET,Browser,TROJAN
   - RULE-SET,Callofduty,TROJAN
   - RULE-SET,Deezer,DIRECT
