@@ -193,7 +193,7 @@ rule-providers:
     type: http
     behavior: classical
     path: "./ruleset/Ads_New.yaml"
-    url: https://git.io/JfIXs
+    url: https://h2y.github.io/Shadowrocket-ADBlock-Rules/sr_top500_banlist_ad.conf
     interval: 600
     
   clashBlock_Adaway:
