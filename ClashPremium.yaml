@@ -416,8 +416,9 @@ rule-providers:
 script:
   code: |
     def main(ctx, metadata):
-        ruleset_action = {"Iklanmaster": "REJECT",
-                          "clashBlock_Adaway": "TROJAN",
+        ruleset_action = {"Ads": "REJECT",
+                          "Iklanmaster": "REJECT",
+                          "clashBlock_Adaway": "REJECT",
                           "Browser": "TROJAN",
                           "Callofduty": "TROJAN",
                           "Deezer": "DIRECT",
