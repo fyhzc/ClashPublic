@@ -164,7 +164,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-    - 
+    - SG4_1 Contabo
     
   - name: VLESS
     type: load-balance
