@@ -193,8 +193,8 @@ rule-providers:
     type: http
     behavior: classical
     path: "./ruleset/Ads.conf"
-    url: https://h2y.github.io/Shadowrocket-ADBlock-Rules/sr_top500_banlist_ad.conf
-    interval: 600
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Ads.yaml
+    interval: 86400
     
   clashBlock_Adaway:
     type: http
