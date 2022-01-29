@@ -137,7 +137,7 @@ experimental:
 
 proxies:
 #---------------------------------------------------
-#--------------------- TROJAN ----------------------
+#---------------------TROJAN----------------------
 #Expired date 23-02-2022
 - {name: SG4_1 Contabo, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 30c4f060-7cb1-11ec-b136-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
 - {name: SG4_2 Contabo, server: vpn4.tjvpn.org, port: 443, udp: true, type: trojan, password: 51170be0-7cb1-11ec-b632-217f943883dc, sni: p16-tiktokcdn-com.akamaized.net, skip-cert-verify: true}
@@ -164,7 +164,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-    - 
+    - SG4_1 Contabo
     
   - name: VLESS
     type: load-balance
@@ -172,7 +172,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-    - 
+    - SG5_1 Contabo
     
   - name: TROJAN
     type: load-balance
@@ -198,8 +198,8 @@ proxy-groups:
     
     
 rules:
- - IP-CIDR,8.8.8.0/24,VMESS,VLESS
- - IP-CIDR,1.1.1.0/24,VMESS,VLESS
- - IP-CIDR,208.67.220.0/24,VMESS,VLESS
+ - IP-CIDR,8.8.8.0/24,VMESS,VLESS,TROJAN
+ - IP-CIDR,1.1.1.0/24,VMESS,VLESS,TROJAN
+ - IP-CIDR,208.67.220.0/24,VMESS,VLESS,TROJAN
  - GEOIP,CN,DIRECT
  - MATCH,VMESS
