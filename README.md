@@ -15,8 +15,9 @@ Clash Share Public
 </p>
 <p align="center">
 <sup>
-     Design for<i> Clash Premium (v2.5.3) / Clash Foss (v2.5.4) </i>.
-     <br> Maintained by <b>Hackdeem</b>
+     Package Active<b>
+           <br> * Maintained by <b>Hackdeem</b>
+           <br> * Maintained by <b>Hackdeem</b>
 </sup>
 <br>
 </p>
