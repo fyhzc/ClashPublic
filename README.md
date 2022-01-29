@@ -15,9 +15,10 @@ Clash Share Public
 </p>
 <p align="center">
 <sup>
-     Package Active<b>
-           <br> * Maintained by <b>Hackdeem</b>
-           <br> * Maintained by <b>Hackdeem</b>
+     <b>Package Active</b>
+      <br> <i> Tiktok</i>
+     <i> Extra Unlimited</i>
+          
 </sup>
 <br>
 </p>
