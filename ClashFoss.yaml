@@ -137,7 +137,7 @@ experimental:
 
 proxies:
 #--------------------- VLESS -----------------------
-##Expired date 04-02-2022
+#Expired date 04-02-2022
 - {name: SG2_1 Digital Ocean, server: do2.kitu.xyz, port: 443, type: vless, uuid: 8b5376cd-04ce-4a69-8e53-a9fb288f252e, sni: p16-tiktokcdn-com.akamaized.net, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vless/, headers: {Host: p16-tiktokcdn-com.akamaized.net}}}
 #---------------------------------------------------
 #--------------------- TROJAN ----------------------
