@@ -189,6 +189,13 @@ proxy-groups:
     - vpn7.tjvpn.org 21
       
 rule-providers:
+  Ads_New:
+    type: http
+    behavior: classical
+    path: "./ruleset/Ads_New.yaml"
+    url: https://git.io/JfIXs
+    interval: 600
+    
   clashBlock_Adaway:
     type: http
     behavior: classical
