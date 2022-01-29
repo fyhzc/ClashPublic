@@ -136,6 +136,10 @@ experimental:
   interface-name: en0
 
 proxies:
+#--------------------- VMESS ----------------------
+#Expired date 04-02-2022
+- {name: ID3_1 Uninet, server: id3.kitu.xyz, port: 443, type: vmess, uuid: d1f8dac0-7844-4602-9357-588768a586af, sni: p16-tiktokcdn-com.akamaized.net, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess/, headers: {Host: p16-tiktokcdn-com.akamaized.net}}}
+#---------------------------------------------------
 #--------------------- VLESS -----------------------
 #Expired date 04-02-2022
 - {name: SG2_1 Digital Ocean, server: do2.kitu.xyz, port: 443, type: vless, uuid: 8b5376cd-04ce-4a69-8e53-a9fb288f252e, sni: p16-tiktokcdn-com.akamaized.net, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vless/, headers: {Host: p16-tiktokcdn-com.akamaized.net}}}
@@ -167,7 +171,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-    - SG4_1 Contabo
+    - ID3_1 Uninet
     
   - name: VLESS
     type: load-balance
