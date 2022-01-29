@@ -16,11 +16,10 @@ Clash Share Public
 <p align="center">
 <sup>
      <b>Package Active</b>
-      <br> <i> Tiktok</i>
       <br> <i> Extra Unlimited</i>
       <br> <i> Combo Sakti</i>
       <br> <i> Unlimax</i>
-          
+      <br> <i> Tiktok</i>
 </sup>
 <br>
 </p>
