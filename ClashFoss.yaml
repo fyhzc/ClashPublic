@@ -139,6 +139,7 @@ proxies:
 #--------------------- VMESS ----------------------
 #Expired date 04-02-2022
 - {name: ID3_1 Uninet, server: id3.kitu.xyz, port: 443, type: vmess, uuid: d1f8dac0-7844-4602-9357-588768a586af, sni: p16-tiktokcdn-com.akamaized.net, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess/, headers: {Host: p16-tiktokcdn-com.akamaized.net}}}
+- {name: ID2_1 Uninet, server: 104.22.25.131, port: 80, type: vmess, uuid: 96748972-5b08-4413-8e05-713f585cc597, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess/, headers: {Host: id2.kitu.xyz}}}
 #---------------------------------------------------
 #--------------------- VLESS -----------------------
 #Expired date 04-02-2022
@@ -166,15 +167,16 @@ proxies:
 
 proxy-groups:
   - name: VMESS
-    type: load-balance
+    type: select
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     strategy: consistent-hashing
     proxies:
     - ID3_1 Uninet
+    - ID2_1 Uninet
     
   - name: VLESS
-    type: load-balance
+    type: select
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     strategy: consistent-hashing
@@ -182,7 +184,7 @@ proxy-groups:
     - SG2_1 Digital Ocean
     
   - name: TROJAN
-    type: load-balance
+    type: select
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     strategy: consistent-hashing
@@ -202,10 +204,33 @@ proxy-groups:
     - SG7_2 Contabo
     - SG7_3 Contabo
     
+  - name: ALL
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+    - ID3_1 Uninet
+    - ID2_1 Uninet
+    - SG2_1 Digital Ocean
+    - SG4_1 Contabo
+    - SG4_2 Contabo
+    - SG4_3 Contabo
+    - SG5_1 Contabo
+    - SG5_2 Contabo
+    - SG4_4 Contabo
+    - SG6_1 Contabo
+    - SG6_2 Contabo
+    - SG6_3 Contabo
+    - SG6_4 Contabo
+    - SG6_5 Contabo
+    - SG7_1 Contabo
+    - SG7_2 Contabo
+    - SG7_3 Contabo
     
 rules:
- - IP-CIDR,8.8.8.0/24,VMESS,VLESS,TROJAN
- - IP-CIDR,1.1.1.0/24,VMESS,VLESS,TROJAN
- - IP-CIDR,208.67.220.0/24,VMESS,VLESS,TROJAN
+ - IP-CIDR,8.8.8.0/24,VMESS,VLESS,TROJAN,ALL
+ - IP-CIDR,1.1.1.0/24,VMESS,VLESS,TROJAN,ALL
+ - IP-CIDR,208.67.220.0/24,VMESS,VLESS,TROJAN,ALL
  - GEOIP,CN,DIRECT
  - MATCH,VMESS
