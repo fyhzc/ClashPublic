@@ -193,7 +193,7 @@ rule-providers:
     type: http
     behavior: classical
     path: "./ruleset/Ads.yaml"
-    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Ads.yaml
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
     interval: 86400
     
   clashBlock_Adaway:
